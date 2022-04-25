@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./lightbox.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./utilties.css">
+    <title>Home | Sparta</title>
+</head>
+<body id="home">
+    <header class="hero">
+        <div id="navbar" class="navbar top">
+            <h1 class="logo">
+                <span class="text-primary"> AST - SPARTA</span> 
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <h1>Airsoft Team <span> SPARTA</span></h1>
+            <p>Based in Leskovac, we attend games events across the SERBIA.</p>
+            <a href="#icon" class="btn"><i class="fas fa-chevron-right"></i> Join Us</a>
+        </div>
+     </header>
+     <main>
+        <!--- For Icons --->
+        <section id="icon" class="icons bg-light">
+            <div class="flex-items">
+                <div>
+                <a href=""><i class="fa-regular fa-calendar-days"></i></a>
+                <div>
+                    <h3>Events</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde at nesciunt laborum dolorem quam blanditiis placeat nostrum ut esse officiis!</p>
+                </div>
+               </div>
+               <div>
+                   <a href=""><i class="fa-regular fa-images"></i></a>
+                   <div>
+                       <h3>Gallery</h3>
+                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde at nesciunt laborum dolorem quam blanditiis placeat nostrum ut esse officiis!</p>
+                   </div>
+                  </div>
+                  <div>
+                   <a href=""><i class="fa-solid fa-person-booth"></i></a>
+                   <div>
+                       <h3>Join Us</h3>
+                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde at nesciunt laborum dolorem quam blanditiis placeat nostrum ut esse officiis!</p>
+                   </div>
+                  </div>
+            </div>
+        </section> 
+         <!--- About--->
+         <sections id="about" class="solutions flex-columns flex-reverse">
+            <div class="row">
+               <div class="column">
+                   <div class="column-1">
+                       <img src="./img/toxic-player-fIIYBw4b-DQ-unsplash.jpg" alt="">
+                   </div>
+               </div>
+               <div class="column">
+                   <div class="column-2 bg-primary">
+                       <h4>Who we are</h4>
+                       <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, quasi.</h2>
+                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate omnis dicta autem recusandae illum a eligendi totam distinctio consectetur, adipisci magnam vitae ut eos delectus necessitatibus quasi, alias veritatis soluta!</p>
+                       <a href="./about.html" class="btn btn-outline"> Read More</a>
+                   </div>
+               </div>
+
+            </div>
+        </sections>
+         <!---- contact ---->
+         <sections id="contact" class="contact flex-columns">
+            <div class="row">
+               <div class="column">
+                   <div class="column-1">
+                       <img src="./img/daniel-stuben-VMXXvU1oKw8-unsplash.jpg" alt="">
+                   </div>
+               </div>
+               <div class="column">
+                   <div class="column-2 bg-light">
+                       <h2>Contact Us</h2>
+                       <form action="process.php" method="post" class="callback-form">
+                           <div class="form-control">
+                           <input type="text" name="name" placeholder="Enter name">
+                           <input type="email" name="email" placeholder="Enter email">
+                           <input type="number" name="phone" placeholder="Enter phone">
+                            <textarea name="message" id="message" cols="76" rows="10"></textarea>
+                           </div>
+                           <input type="submit" value="Send" id="submit" class="btn">
+                       </form>
+                   </div>
+               </div>
+            </div>
+        </sections>
+     </main>
+     <footer class="footer bg-dark">
+        <div class="social">
+            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+            <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+        </div>
+        <p>Copyright &copy; 2022 - AST_SPARTA</p>
+     </footer>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">   
+    </script>
+    <script src="./js/lightbox.min.js"></script>
+     <script>
+        const navbar = document.getElementById('navbar');
+      let scrolled = false;
+
+      window.onscroll = function () {
+        if (window.pageYOffset > 100) {
+          navbar.classList.remove('top');
+          if (!scrolled) {
+            navbar.style.transform = 'translateY(-70px)';
+          }
+          setTimeout(function () {
+            navbar.style.transform = 'translateY(0)';
+            scrolled = true;
+          }, 200);
+        } else {
+          navbar.classList.add('top');
+          scrolled = false;
+        }
+      };
+
+      // Smooth Scrolling
+      $('#navbar a, .btn').on('click', function (e) {
+        if (this.hash !== '') {
+          e.preventDefault();
+
+          const hash = this.hash;
+
+          $('html, body').animate(
+            {
+              scrollTop: $(hash).offset().top - 100,
+            },
+            800
+          );
+        }
+      });
+    </script> 
+</body>
+</html>
